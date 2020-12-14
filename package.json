@@ -7,6 +7,7 @@
 	"author": "Leet Games",
 	"main": "app.js",
 	"repository": "asteroid-dev/asteroidapp",
+	"flash_version": "32.0.0.363",
 	"scripts": {
 		"postinstall": "electron-builder install-app-deps",
 		"lint": "xo",
