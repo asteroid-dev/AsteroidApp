@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Leet Hotel</title>
+    <link rel="stylesheet" type="text/css" href="../resources/css/app.min.css">
+    <script src="../resources/js/fontawesome/all.min.js"></script>
+</head>
+<body class="me">
+<header class="me__header" id="header">
+    <nav class="me__navigation">
+        <ul id="navigation" class="me__list"></ul>
+    </nav>
+
+    <div class="me__buttons">
+        <button id="reload" class="me__reload">
+            <i id="meReloadIcon" class="fas fa-sync-alt"></i>
+        </button>
+        <button id="fullScreen" class="me__fullscreen">
+            <i id="fullScreenIcon" class="fas fa-expand-arrows-alt"></i>
+        </button>
+    </div>
+</header>
+<div id="wrapper"></div>
+<section class="logout__process">
+    <img src="../resources/img/loading.gif">
+    <span class="logout__process--text">Logging out...<br><small>Will you be back soon? We don't want to miss you :(</small></span>
+</section>
+<script>require("../resources/js/home")</script>
+</body>
+</html>

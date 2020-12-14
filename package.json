@@ -1,0 +1,96 @@
+{
+	"name": "asteroid",
+	"productName": "Asteroid",
+	"version": "1.0.0",
+	"description": "AsteroidApp - Flash Browser Application for Windows and Mac",
+	"license": "MIT",
+	"author": "Leet Games",
+	"main": "app.js",
+	"repository": "asteroid-dev/asteroidapp",
+	"scripts": {
+		"postinstall": "electron-builder install-app-deps",
+		"lint": "xo",
+		"test": "npm run lint",
+		"start": "electron .",
+		"pack": "electron-builder --dir",
+		"mac": "electron-builder --macos",
+		"windows": "electron-builder --windows",
+		"linux": "electron-builder --linux",
+		"release": "np"
+	},
+	"dependencies": {
+		"del": "^5.1.0",
+		"dotenv": "^8.2.0",
+		"electron-simple-updater": "^2.0.8",
+		"jquery": "^3.5.0",
+		"jquery-easing": "0.0.1"
+	},
+	"devDependencies": {
+		"electron": "^7.1.1",
+		"electron-builder": "^22.8.1",
+		"electron-debug": "^3.1.0",
+		"electron-notarize": "^1.0.0",
+		"np": "^6.3.2",
+		"xo": "^0.32.1"
+	},
+	"xo": {
+		"envs": [
+			"node",
+			"browser"
+		]
+	},
+	"np": {
+		"publish": false,
+		"releaseDraft": false
+	},
+	"build": {
+		"appId": "nl.habbo.AsteroidApp",
+		"extraResources": [
+			{
+				"from": "./plugins/",
+				"to": "../plugins"
+			}
+		],
+		"mac": {
+			"category": "public.games.social-networking",
+			"darkModeSupport": true,
+			"hardenedRuntime": true,
+			"gatekeeperAssess": false,
+			"entitlements": "build/entitlements-mac.plist",
+			"entitlementsInherit": "build/entitlements-mac.plist"
+		},
+		"dmg": {
+			"iconSize": 160,
+			"contents": [
+				{
+					"x": 180,
+					"y": 170
+				},
+				{
+					"x": 480,
+					"y": 170,
+					"type": "link",
+					"path": "/Applications"
+				}
+			]
+		},
+		"linux": {
+			"target": [
+				"AppImage",
+				"deb"
+			],
+			"category": "Network;Chat"
+		},
+		"win": {
+			"target": [
+				{
+					"target": "nsis",
+					"arch": [
+						"x64",
+						"ia32"
+					]
+				}
+			]
+		}
+	}
+}
